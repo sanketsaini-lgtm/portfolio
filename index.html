@@ -1,0 +1,415 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanket Saini | SEO Expert</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family:'Poppins',sans-serif;
+    }
+
+    :root{
+      --bg:#0f172a;
+      --text:#ffffff;
+      --card:#1e293b;
+      --primary:#38bdf8;
+      --secondary:#94a3b8;
+    }
+
+    body.light{
+      --bg:#f8fafc;
+      --text:#111827;
+      --card:#ffffff;
+      --primary:#0284c7;
+      --secondary:#475569;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      transition:0.4s;
+      overflow-x:hidden;
+    }
+
+    header{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+      position:relative;
+      background:linear-gradient(135deg,#0f172a,#1e293b);
+    }
+
+    body.light header{
+      background:linear-gradient(135deg,#dbeafe,#f8fafc);
+    }
+
+    .toggle-btn{
+      position:fixed;
+      top:20px;
+      right:20px;
+      z-index:1000;
+      background:var(--primary);
+      border:none;
+      padding:12px 18px;
+      border-radius:50px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    .hero h1{
+      font-size:65px;
+      color:var(--primary);
+      margin-bottom:10px;
+      animation:fadeIn 1s ease;
+    }
+
+    .typing{
+      font-size:30px;
+      font-weight:500;
+      color:var(--text);
+      margin-bottom:20px;
+      min-height:40px;
+    }
+
+    .hero p{
+      max-width:750px;
+      margin:auto;
+      color:var(--secondary);
+      line-height:1.8;
+    }
+
+    .btns{
+      margin-top:30px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 30px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+      border:2px solid var(--primary);
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#000;
+    }
+
+    .btn-secondary{
+      color:var(--primary);
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+    }
+
+    section{
+      padding:90px 10%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:50px;
+      color:var(--primary);
+    }
+
+    .about{
+      text-align:center;
+      max-width:900px;
+      margin:auto;
+      color:var(--secondary);
+      line-height:1.9;
+    }
+
+    .services,
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card,
+    .project{
+      background:var(--card);
+      padding:30px;
+      border-radius:20px;
+      transition:0.4s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .card:hover,
+    .project:hover{
+      transform:translateY(-10px);
+    }
+
+    .card h3,
+    .project h3{
+      margin-bottom:15px;
+      color:var(--primary);
+    }
+
+    .card p,
+    .project p{
+      color:var(--secondary);
+      line-height:1.7;
+    }
+
+    .project img{
+      width:100%;
+      border-radius:15px;
+      margin-bottom:20px;
+      height:200px;
+      object-fit:cover;
+    }
+
+    .contact-form{
+      max-width:700px;
+      margin:auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:15px;
+      margin-bottom:20px;
+      border:none;
+      border-radius:10px;
+      background:var(--card);
+      color:var(--text);
+      font-size:16px;
+    }
+
+    .contact-form button{
+      width:100%;
+      padding:15px;
+      border:none;
+      background:var(--primary);
+      border-radius:10px;
+      font-size:17px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:var(--secondary);
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:42px;
+      }
+
+      .typing{
+        font-size:22px;
+      }
+
+      .title{
+        font-size:32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<button class="toggle-btn" onclick="toggleMode()">🌙 Mode</button>
+
+<header>
+  <div class="hero">
+    <h1>Sanket Saini</h1>
+
+    <div class="typing" id="typing"></div>
+
+    <p>
+      I help businesses grow online with powerful SEO strategies,
+      modern website development, Google Business Profile optimization,
+      and result-driven digital marketing solutions.
+    </p>
+
+    <div class="btns">
+      <a href="#contact" class="btn btn-primary">Hire Me</a>
+      <a href="resume.pdf" download class="btn btn-secondary">Download Resume</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2 class="title">About Me</h2>
+
+  <div class="about">
+    I am a passionate SEO expert specializing in On-Page SEO,
+    Off-Page SEO, GMB optimization, and SEO-friendly website development.
+    I have worked with brands like Shivadheesh Enterprises,
+    Lionparts Powersports, and Me Craft to improve rankings,
+    traffic, and online visibility.
+  </div>
+</section>
+
+<section>
+  <h2 class="title">My Services</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <h3>On-Page SEO</h3>
+      <p>
+        Complete website optimization including keyword research,
+        content optimization, internal linking, and technical SEO.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Off-Page SEO</h3>
+      <p>
+        High authority backlinks, guest posting, citations,
+        and brand building strategies.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>GMB Optimization</h3>
+      <p>
+        Google Business Profile setup and optimization
+        to improve local business visibility.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Website Development</h3>
+      <p>
+        Responsive and modern websites optimized for SEO,
+        speed, and conversions.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="title">Projects</h2>
+
+  <div class="projects">
+
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="project">
+      <h3>Shivadheesh Enterprises</h3>
+      <p>SEO optimization and digital growth strategy implementation.</p>
+    </div>
+
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="project">
+      <h3>Lionparts Powersports</h3>
+      <p>Search engine optimization and performance improvements.</p>
+    </div>
+
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="project">
+      <h3>Me Craft</h3>
+      <p>Website SEO, visibility enhancement, and online branding.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="title">Contact Me</h2>
+
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea rows="6" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div style="text-align:center; margin-top:30px; color:var(--secondary);">
+    <p><strong>Phone:</strong> 9116664153</p>
+
+    <p>
+      <strong>LinkedIn:</strong>
+      <a style="color:var(--primary);" target="_blank"
+      href="https://www.linkedin.com/in/sanket-saini-b10b8a352/">
+      Visit Profile
+      </a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Sanket Saini | SEO Portfolio
+</footer>
+
+<script>
+
+  const texts = [
+    "SEO Expert",
+    "Website Developer",
+    "GMB Specialist",
+    "Digital Marketing Strategist"
+  ];
+
+  let count = 0;
+  let index = 0;
+  let currentText = "";
+  let letter = "";
+
+  (function type(){
+
+    if(count === texts.length){
+      count = 0;
+    }
+
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById('typing').textContent = letter;
+
+    if(letter.length === currentText.length){
+      count++;
+      index = 0;
+    }
+
+    setTimeout(type, 150);
+
+  })();
+
+  function toggleMode(){
+    document.body.classList.toggle('light');
+  }
+
+</script>
+
+</body>
+</html>
