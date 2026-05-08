@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +16,7 @@
       padding:0;
       box-sizing:border-box;
       scroll-behavior:smooth;
-      font-family:'Orbitron',sans-serif;
+      font-family:'Poppins',sans-serif;
     }
 
     :root{
@@ -84,7 +83,7 @@
       font-size:65px;
       color:var(--primary);
       margin-bottom:10px;
-      animation:fadeIn 1s ease;
+      animation:glow 2s ease-in-out infinite alternate;
     }
 
     .typing{
@@ -169,7 +168,8 @@
 
     .card:hover,
     .project:hover{
-      transform:translateY(-10px);
+      transform:translateY(-15px) scale(1.03);
+      box-shadow:0 20px 40px rgba(56,189,248,0.35);
     }
 
     .card h3,
@@ -245,11 +245,16 @@
       border-top:1px solid rgba(255,255,255,0.1);
     }
 
-    @keyframes fadeIn{
+    @keyframes glow{
       from{
-        opacity:0;
-        transform:translateY(40px);
+        text-shadow:0 0 10px #38bdf8,0 0 20px #38bdf8;
+        transform:translateY(0px);
       }
+      to{
+        text-shadow:0 0 20px #38bdf8,0 0 40px #38bdf8;
+        transform:translateY(-5px);
+      }
+    }
       to{
         opacity:1;
         transform:translateY(0);
@@ -281,7 +286,7 @@
 
 <header>
   <div class="hero">
-    <h1>Sanket Saini</h1>
+    <h1>𝐒𝐚𝐧𝐤𝐞𝐭 𝐒𝐚𝐢𝐧𝐢</h1>
 
     <div class="typing" id="typing"></div>
 
@@ -443,7 +448,7 @@ particlesJS("particles-js", {
       index = 0;
     }
 
-    setTimeout(type, 150);
+    setTimeout(type, 100);
 
   })();
 
@@ -456,3 +461,4 @@ particlesJS("particles-js", {
 </body>
 </html>
 
+Apni PDF resume ka naam `resume.pdf` rakho aur same folder me daal do.
